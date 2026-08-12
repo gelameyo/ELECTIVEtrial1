@@ -1,0 +1,211 @@
+/* Streamlit Dashboard Style Sheet */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+/* Apply Outfit font globally */
+html, body, [class*="css"], .stMarkdown, p, div, span, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif !important;
+}
+
+/* Style Streamlit primary buttons */
+div.stButton > button {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+    color: white !important;
+    border: none !important;
+    padding: 0.6rem 1.5rem !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3) !important;
+    transition: all 0.3s ease !important;
+    width: 100%;
+}
+
+div.stButton > button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4) !important;
+    background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%) !important;
+}
+
+/* Danger Button Style */
+div.stButton > button.danger-btn {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3) !important;
+}
+div.stButton > button.danger-btn:hover {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%) !important;
+}
+
+/* Styled Container Cards */
+.dashboard-container {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    color: #f8fafc;
+    margin-bottom: 2rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Stat Card Base */
+.stat-card {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Specific Stat Card Colors */
+.stat-gwa {
+    border-left: 5px solid #6366f1;
+    background: linear-gradient(180deg, rgba(99, 102, 241, 0.05) 0%, rgba(30, 41, 59, 0.7) 100%);
+}
+
+.stat-passed {
+    border-left: 5px solid #10b981;
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.05) 0%, rgba(30, 41, 59, 0.7) 100%);
+}
+
+.stat-failed {
+    border-left: 5px solid #ef4444;
+    background: linear-gradient(180deg, rgba(239, 68, 68, 0.05) 0%, rgba(30, 41, 59, 0.7) 100%);
+}
+
+.stat-deans {
+    border-left: 5px solid #f59e0b;
+    background: linear-gradient(180deg, rgba(245, 158, 11, 0.05) 0%, rgba(30, 41, 59, 0.7) 100%);
+    animation: glow 2s infinite alternate;
+}
+
+.stat-not-eligible {
+    border-left: 5px solid #64748b;
+    background: linear-gradient(180deg, rgba(100, 116, 139, 0.05) 0%, rgba(30, 41, 59, 0.7) 100%);
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 10px rgba(245, 158, 11, 0.1);
+    }
+    to {
+        box-shadow: 0 0 25px rgba(245, 158, 11, 0.35);
+        border-color: #fbbf24;
+    }
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #94a3b8;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.stat-value {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.stat-value-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.stat-desc {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+/* Custom Tables */
+.table-responsive {
+    overflow-x: auto;
+    margin-top: 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background: rgba(30, 41, 59, 0.4);
+}
+
+.custom-table th {
+    background-color: rgba(15, 23, 42, 0.8);
+    color: #cbd5e1;
+    font-weight: 600;
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.custom-table td {
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+}
+
+.custom-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Custom Badges */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.badge-passed {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.badge-failed {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #f87171;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.badge-deans {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #fbbf24;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-not-eligible {
+    background-color: rgba(100, 116, 139, 0.15);
+    color: #94a3b8;
+    border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+.badge-info {
+    background-color: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border: 1px solid rgba(99, 102, 241, 0.3);
+}
